@@ -1,0 +1,17 @@
+.basic-info-section {
+  display: flex;
+  gap: 16px;
+}
+
+.basic-info-section > * {
+  flex: 1 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+#input-name {
+  flex-grow: 1;
+  font-size: x-large;
+}

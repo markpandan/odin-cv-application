@@ -1,0 +1,9 @@
+.summary-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+#input-summary {
+  flex: 1 0 auto;
+}

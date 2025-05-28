@@ -1,0 +1,14 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 1120px;
+  margin: auto;
+
+  padding-top: 1rem;
+}

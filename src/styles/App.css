@@ -1,0 +1,14 @@
+input {
+  border-radius: 16px;
+  padding: 1em;
+}
+
+.card {
+  border: 1px solid black;
+  border-radius: 16px;
+  padding: 2em;
+}
+
+.title {
+  text-align: center;
+}

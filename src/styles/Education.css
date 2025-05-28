@@ -1,0 +1,17 @@
+.education-section > * {
+  margin-bottom: 16px;
+}
+
+.education-item > * {
+  display: block;
+  width: 40rem;
+}
+
+.input-course {
+  margin-bottom: 8px;
+}
+
+.input-education-duration-date {
+  float: right;
+  width: 10rem;
+}

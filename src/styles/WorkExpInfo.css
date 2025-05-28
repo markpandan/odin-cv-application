@@ -1,0 +1,49 @@
+.work-exp-section {
+  position: relative;
+}
+
+.work-exp-header {
+  margin-bottom: 32px;
+}
+
+.work-exp-header-title {
+  margin-bottom: 16px;
+}
+
+.work-item {
+  position: relative;
+  margin-bottom: 32px;
+  padding: 2rem 1rem 1rem;
+}
+
+.delete-work-item {
+  position: absolute;
+  right: 0%;
+  top: 0%;
+}
+
+.work-item > input:not(.input-work-duration-date) {
+  width: 40rem;
+  display: block;
+}
+
+.input-work-duration-date {
+  width: 10rem;
+  float: right;
+}
+
+.input-company {
+  margin-bottom: 16px;
+}
+
+.input-position {
+  margin-bottom: 8px;
+}
+
+.add-education {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+
+  margin: 0;
+}
