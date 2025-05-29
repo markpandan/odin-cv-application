@@ -12,3 +12,9 @@ input {
 .title {
   text-align: center;
 }
+
+.btn-toggleWriter {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
