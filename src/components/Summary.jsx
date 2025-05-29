@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import SavedInfo from "./parent-components/SavedInfo";
+import SaveInfo from "./parent-components/SaveInfo";
 import WriteInfo from "./parent-components/WriteInfo";
 import "../styles/Summary.css";
 
@@ -13,8 +13,8 @@ export default function Summary() {
   return (
     <div
       className="card"
-      onMouseEnter={() => setShowEditBtnToggle(true)}
-      onMouseLeave={() => setShowEditBtnToggle(false)}
+      onMouseEnter={() => !toggleWrite && setShowEditBtnToggle(true)}
+      onMouseLeave={() => !toggleWrite && setShowEditBtnToggle(false)}
     >
       <div className="summary-section">
         <h1>Summary</h1>
@@ -23,7 +23,7 @@ export default function Summary() {
           <WriteInfo
             handleWriteToggle={() => {
               setToggleWrite(false);
-              setShowEditBtnToggle(null);
+              setShowEditBtnToggle(false);
             }}
           >
             <input
@@ -35,15 +35,15 @@ export default function Summary() {
             />
           </WriteInfo>
         ) : (
-          <SavedInfo
+          <SaveInfo
             handleOnClick={() => {
               setToggleWrite(true);
-              setShowEditBtnToggle(null);
+              setShowEditBtnToggle(false);
             }}
             showEditBtnToggle={showEditBtnToggle}
           >
             <h2>{!value ? "Place your summary here" : value}</h2>
-          </SavedInfo>
+          </SaveInfo>
         )}
       </div>
     </div>

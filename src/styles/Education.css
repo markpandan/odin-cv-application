@@ -1,10 +1,20 @@
-.education-section > * {
-  margin-bottom: 16px;
+.education-section {
+  position: relative;
 }
 
-.education-item > * {
-  display: block;
+.education-item {
+  position: relative;
+  margin-bottom: 32px;
+  padding: 2rem 1rem 1rem;
+}
+
+.education-item > input:not(.input-education-duration-date) {
   width: 40rem;
+  display: block;
+}
+
+.education-section > * {
+  margin-bottom: 16px;
 }
 
 .input-course {
@@ -14,4 +24,10 @@
 .input-education-duration-date {
   float: right;
   width: 10rem;
+}
+
+.delete-education-item {
+  position: absolute;
+  right: 0%;
+  top: 0%;
 }

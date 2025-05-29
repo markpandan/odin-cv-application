@@ -1,4 +1,4 @@
-export default function SavedInfo({
+export default function SaveInfo({
   handleOnClick,
   showEditBtnToggle,
   children,
@@ -7,7 +7,7 @@ export default function SavedInfo({
     <>
       {children}
       <button
-        class="btn-toggleWriter"
+        className="btn-toggleWriter"
         onClick={handleOnClick}
         style={{ display: showEditBtnToggle ? "block" : "none" }}
       >

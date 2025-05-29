@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import SavedInfo from "./parent-components/SavedInfo";
+import SaveInfo from "./parent-components/SaveInfo";
 import WriteInfo from "./parent-components/WriteInfo";
 import "../styles/BasicInfo.css";
 
@@ -86,7 +86,7 @@ export default function BasicInfo() {
             </div>
           </WriteInfo>
         ) : (
-          <SavedInfo
+          <SaveInfo
             handleOnClick={() => setToggleWrite(true)}
             showEditBtnToggle={showWriteBtnToggle}
           >
@@ -105,7 +105,7 @@ export default function BasicInfo() {
               </h2>
               <h2>{!values.address ? "CA, United States" : values.address}</h2>
             </div>
-          </SavedInfo>
+          </SaveInfo>
         )}
       </div>
     </div>

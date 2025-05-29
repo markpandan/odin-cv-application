@@ -1,9 +1,8 @@
 import { useState } from "react";
-import "../styles/WorkExpInfo.css";
 
-// TODO: Create two components: SavedWorkItem(), and WriteWorkItem().
-// - SavedWorkedItem() displays the saved details of the work experience
-// - WriteWorkItem() display the details of the work experience by which you can edit
+import "../styles/WorkExpInfo.css";
+import SaveInfo from "./parent-components/SaveInfo";
+import WriteInfo from "./parent-components/WriteInfo";
 
 function WorkItem({
   isActive,
@@ -20,32 +19,32 @@ function WorkItem({
       className="work-item"
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
-      style={{ border: isActive ? borderStyle : "" }}
+      style={{ border: isActive ? borderStyle : "none" }}
     >
       <input
         type="text"
-        className="input-work-duration-date"
+        className="work-duration-date"
         placeholder="Duration Date"
         value={values.durationDate}
         onChange={onChange}
       />
       <input
         type="text"
-        className="input-position"
+        className="position"
         placeholder="Job Position"
         value={values.jobPosition}
         onChange={onChange}
       />
       <input
         type="text"
-        className="input-company"
+        className="company"
         placeholder="Company"
         value={values.company}
         onChange={onChange}
       />
       <input
         type="text"
-        className="input-role-list"
+        className="role-list"
         placeholder="Role List"
         value={values.roleList}
         onChange={onChange}
@@ -65,8 +64,9 @@ export default function WorkExpInfo() {
   const [workExpValues, setWorkExpValues] = useState([
     { id: 0, jobPosition: "", company: "", roleList: "", durationDate: "" },
   ]);
-  const [showAddBtn, setShowAddBtn] = useState(false);
   const [activeIndex, setActiveIndex] = useState(null);
+  const [toggleWrite, setToggleWrite] = useState(false);
+  const [showEditBtnToggle, setShowEditBtnToggle] = useState(false);
 
   const handleChangeWorkExpValue = (id, key, value) => {
     setWorkExpValues(
@@ -102,18 +102,20 @@ export default function WorkExpInfo() {
 
         // TODO: Change the conditions here for any details that is considerably unqiue to these inputs.
         switch (e.target.className) {
-          case "input-work-duration-date":
+          case "work-duration-date":
             workExpKey = "durationDate";
             break;
-          case "input-position":
+          case "position":
             workExpKey = "jobPosition";
             break;
-          case "input-company":
+          case "company":
             workExpKey = "company";
             break;
-          case "input-role-list":
+          case "role-list":
             workExpKey = "roleList";
             break;
+          default:
+            throw new Error("Invalid class name.");
         }
 
         handleChangeWorkExpValue(workExp.id, workExpKey, e.target.value);
@@ -123,24 +125,61 @@ export default function WorkExpInfo() {
 
   return (
     <div
-      className="card work-exp-section"
-      onMouseEnter={() => setShowAddBtn(true)}
-      onMouseLeave={() => setShowAddBtn(false)}
+      className="card"
+      onMouseEnter={() => {
+        !toggleWrite && setShowEditBtnToggle(true);
+      }}
+      onMouseLeave={() => {
+        !toggleWrite && setShowEditBtnToggle(false);
+      }}
     >
-      <div className="work-exp-header">
-        <h1 className="work-exp-header-title">Work Experience</h1>
-        <hr />
+      <div className="work-exp-section">
+        <div className="section-header">
+          <h1 className="section-title">Work Experience</h1>
+          <hr />
+        </div>
+        {toggleWrite ? (
+          <WriteInfo
+            handleWriteToggle={() => setToggleWrite(false)}
+            appendBtns={
+              <button className="add-work-exp" onClick={handleAddWorkExpValue}>
+                +
+              </button>
+            }
+          >
+            {workItemList}
+          </WriteInfo>
+        ) : (
+          <SaveInfo
+            handleOnClick={() => {
+              setToggleWrite(true);
+              setShowEditBtnToggle(false);
+            }}
+            showEditBtnToggle={showEditBtnToggle}
+          >
+            {workExpValues.map((workExp) => (
+              <div key={workExp.id} className="work-item">
+                <h2 className="work-duration-date">
+                  {!workExp.durationDate ? "MM/YYYY" : workExp.durationDate}
+                </h2>
+                <h2 className="position">
+                  {!workExp.jobPosition
+                    ? "Software Engineer"
+                    : workExp.jobPosition}
+                </h2>
+                <h2 className="company">
+                  {!workExp.company ? "Lorem Ipsum Company" : workExp.company}
+                </h2>
+                <h2 className="role-list">
+                  {!workExp.roleList
+                    ? "List your roles here"
+                    : workExp.roleList}
+                </h2>
+              </div>
+            ))}
+          </SaveInfo>
+        )}
       </div>
-
-      {workItemList}
-
-      <button
-        className="add-education"
-        style={{ display: showAddBtn ? "block" : "none" }}
-        onClick={handleAddWorkExpValue}
-      >
-        +
-      </button>
     </div>
   );
 }

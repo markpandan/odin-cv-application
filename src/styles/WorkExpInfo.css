@@ -2,18 +2,15 @@
   position: relative;
 }
 
-.work-exp-header {
-  margin-bottom: 32px;
-}
-
-.work-exp-header-title {
-  margin-bottom: 16px;
-}
-
 .work-item {
   position: relative;
   margin-bottom: 32px;
   padding: 2rem 1rem 1rem;
+}
+
+.work-item > input:not(.work-duration-date) {
+  width: 40rem;
+  display: block;
 }
 
 .delete-work-item {
@@ -22,28 +19,15 @@
   top: 0%;
 }
 
-.work-item > input:not(.input-work-duration-date) {
-  width: 40rem;
-  display: block;
-}
-
-.input-work-duration-date {
+.work-duration-date {
   width: 10rem;
   float: right;
 }
 
-.input-company {
+.company {
   margin-bottom: 16px;
 }
 
-.input-position {
+.position {
   margin-bottom: 8px;
-}
-
-.add-education {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-
-  margin: 0;
 }
