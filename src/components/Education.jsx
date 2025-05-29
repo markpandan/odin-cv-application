@@ -4,6 +4,13 @@ import "../styles/Education.css";
 import SaveInfo from "./parent-components/SaveInfo";
 import WriteInfo from "./parent-components/WriteInfo";
 
+const educationValueFormat = {
+  id: 0,
+  course: "",
+  school: "",
+  durationDate: "",
+};
+
 // TODO: Refractor this code along with the WorkExpInfo.jsx component
 function EducationItem({
   isActive,
@@ -56,7 +63,7 @@ function EducationItem({
 
 export default function Education() {
   const [educationValues, setEducationValues] = useState([
-    { id: 0, course: "", school: "", durationDate: "" },
+    educationValueFormat,
   ]);
   const [activeIndex, setActiveIndex] = useState(null);
   const [toggleWrite, setToggleWrite] = useState(false);
@@ -74,7 +81,10 @@ export default function Education() {
   };
 
   const handleAddEducationValue = () => {
-    setEducationValues([...educationValues, { id: crypto.randomUUID() }]);
+    setEducationValues([
+      ...educationValues,
+      { ...educationValueFormat, id: crypto.randomUUID() },
+    ]);
   };
 
   const handleDeleteEducationValue = (id) => {
