@@ -1,4 +1,3 @@
-// import "../styles/BasicInfo.css";
 import SectionInfo from "./parent-components/SectionInfo";
 
 export default function BasicInfo() {

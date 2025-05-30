@@ -33,6 +33,7 @@ function GenerateSectionElements({
     return inputKeys.map((key, index) => (
       <CustomizedDisplayElement
         key={index}
+        inputKey={key}
         value={inputValues[key]}
         placeholder={inputPlaceholders[key]}
       />
@@ -41,16 +42,12 @@ function GenerateSectionElements({
 }
 
 export default function SectionInfo({
-  header,
+  header = null,
   splitIndex = null,
   splitIndexClassNames = ["", ""],
   inputFormat = {},
   inputPlaceholders = {},
 }) {
-  // TODO: Should reserve this if statement on the SectionRecurringInfo component
-  //   if (!("id" in inputFormat))
-  //     throw new Error("inputFormat method doesn't have an 'id' key");
-
   const inputKeys = Object.keys(inputFormat);
   const [inputValues, setInputValues] = useState(inputFormat);
   const [toggleWrite, setToggleWrite] = useState(false);

@@ -1,3 +1,9 @@
-export default function CustomizedDisplayElement({ value, placeholder }) {
-  return <h2>{!value ? placeholder : value}</h2>;
+export default function CustomizedDisplayElement({
+  inputKey,
+  value,
+  placeholder,
+}) {
+  return (
+    <h2 className={`display-${inputKey}`}>{!value ? placeholder : value}</h2>
+  );
 }

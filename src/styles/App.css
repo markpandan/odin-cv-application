@@ -27,16 +27,17 @@ input {
   margin-bottom: 16px;
 }
 
-.info-container {
+.card-header {
+  width: 100%;
+}
+
+.info-container,
+.info-recurring-container {
   position: relative;
 
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-}
-
-.card-header {
-  width: 100%;
 }
 
 .info-container > *:not(.card-header) {
@@ -45,12 +46,43 @@ input {
   flex-grow: 1;
 }
 
+.info-recurring-container {
+  flex-direction: column;
+}
+
+.info-item {
+  position: relative;
+
+  padding-top: 2rem;
+}
+
+.info-item > input {
+  width: 40rem;
+  display: block;
+}
+
+.info-highlighted {
+  border: 1px solid black;
+}
+
 .btn-write-info-container {
   text-align: center;
   flex: 0 0 100%;
 }
 
+.btn-delete-info-item {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+}
+
 #input-name {
   flex-grow: 1;
   font-size: x-large;
+}
+
+input[name="durationDate"],
+.display-durationDate {
+  width: 10rem;
+  float: right;
 }

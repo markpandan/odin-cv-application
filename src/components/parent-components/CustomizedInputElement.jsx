@@ -7,7 +7,7 @@ export default function CustomizedInputElement({
   return (
     <input
       type="text"
-      id={`input-${inputKey}`}
+      className={`input-${inputKey}`}
       name={inputKey}
       value={inputValue}
       placeholder={placeholder}
