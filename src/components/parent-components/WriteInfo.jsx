@@ -1,3 +1,4 @@
+// TODO: Change this function name into WriteInput when the refractor has already been done.
 export default function WriteInfo({
   handleWriteToggle,
   appendBtns = null,
@@ -6,7 +7,7 @@ export default function WriteInfo({
   return (
     <>
       {children}
-      <div className="btn-container">
+      <div className="btn-write-info-container">
         {appendBtns}
         <button
           onClick={handleWriteToggle}

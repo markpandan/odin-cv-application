@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import "../styles/WorkExpInfo.css";
-import SaveInfo from "./parent-components/SaveInfo";
+import ReadInfo from "./parent-components/ReadInfo";
 import WriteInfo from "./parent-components/WriteInfo";
 
 function WorkItem({
@@ -150,7 +150,7 @@ export default function WorkExpInfo() {
             {workItemList}
           </WriteInfo>
         ) : (
-          <SaveInfo
+          <ReadInfo
             handleOnClick={() => {
               setToggleWrite(true);
               setShowEditBtnToggle(false);
@@ -177,7 +177,7 @@ export default function WorkExpInfo() {
                 </h2>
               </div>
             ))}
-          </SaveInfo>
+          </ReadInfo>
         )}
       </div>
     </div>

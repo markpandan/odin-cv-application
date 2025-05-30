@@ -26,3 +26,31 @@ input {
 .section-title {
   margin-bottom: 16px;
 }
+
+.info-container {
+  position: relative;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.card-header {
+  width: 100%;
+}
+
+.info-container > *:not(.card-header) {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.btn-write-info-container {
+  text-align: center;
+  flex: 0 0 100%;
+}
+
+#input-name {
+  flex-grow: 1;
+  font-size: x-large;
+}

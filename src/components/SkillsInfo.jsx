@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../styles/SkillsInfo.css";
 import WriteInfo from "./parent-components/WriteInfo";
-import SaveInfo from "./parent-components/SaveInfo";
+import ReadInfo from "./parent-components/ReadInfo";
 
 function SkillItem({
   isActive,
@@ -102,7 +102,7 @@ export default function SkillsInfo() {
               ))}
             </WriteInfo>
           ) : (
-            <SaveInfo
+            <ReadInfo
               handleOnClick={() => {
                 setToggleWrite(true);
                 setShowEditBtnToggle(false);
@@ -114,7 +114,7 @@ export default function SkillsInfo() {
                   <h3>{!skill.value ? "My Skill" : skill.value}</h3>
                 </div>
               ))}
-            </SaveInfo>
+            </ReadInfo>
           )}
         </div>
       </div>

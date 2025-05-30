@@ -1,5 +1,5 @@
-// TODO: Change this function name to ReadInfo when all of the refractors is already done.
-export default function SaveInfo({
+// TODO: Change this function name to ReadInput when all of the refractors is already done.
+export default function ReadInfo({
   handleOnClick,
   showEditBtnToggle,
   children,

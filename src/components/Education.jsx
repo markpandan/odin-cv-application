@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import "../styles/Education.css";
-import SaveInfo from "./parent-components/SaveInfo";
+import ReadInfo from "./parent-components/ReadInfo";
 import WriteInfo from "./parent-components/WriteInfo";
 
 const educationValueFormat = {
@@ -155,7 +155,7 @@ export default function Education() {
             {educationItemList}
           </WriteInfo>
         ) : (
-          <SaveInfo
+          <ReadInfo
             handleOnClick={() => {
               setToggleWrite(true);
               setShowEditBtnToggle(false);
@@ -181,7 +181,7 @@ export default function Education() {
                 </h2>
               </div>
             ))}
-          </SaveInfo>
+          </ReadInfo>
         )}
       </div>
     </div>
