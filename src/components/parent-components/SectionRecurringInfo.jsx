@@ -2,44 +2,9 @@ import { useState } from "react";
 
 import CustomizedInputElement from "./CustomizedInputElement";
 import CustomizedDisplayElement from "./CustomizedDisplayElement";
+import GenerateSectionElements from "./GenerateSectionElements";
 import WriteInfo from "./WriteInfo";
 import ReadInfo from "./ReadInfo";
-
-function GenerateSectionElements({
-  toggleWrite,
-  inputKeys,
-  inputValues,
-  inputPlaceholders,
-  onChange,
-  excludeKeys = [],
-}) {
-  if (toggleWrite) {
-    return inputKeys.map(
-      (key, index) =>
-        !excludeKeys.includes(key) && (
-          <CustomizedInputElement
-            key={index}
-            inputKey={key}
-            inputValue={inputValues[key]}
-            placeholder={inputPlaceholders[key]}
-            onChange={onChange}
-          />
-        )
-    );
-  } else {
-    return inputKeys.map(
-      (key, index) =>
-        !excludeKeys.includes(key) && (
-          <CustomizedDisplayElement
-            key={index}
-            inputKey={key}
-            value={inputValues[key]}
-            placeholder={inputPlaceholders[key]}
-          />
-        )
-    );
-  }
-}
 
 export default function SectionRecurringInfo({
   header = null,

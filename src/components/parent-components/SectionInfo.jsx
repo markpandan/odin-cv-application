@@ -1,7 +1,6 @@
 import { useState } from "react";
 
-import CustomizedInputElement from "./CustomizedInputElement";
-import CustomizedDisplayElement from "./CustomizedDisplayElement";
+import GenerateSectionElements from "./GenerateSectionElements";
 import WriteInfo from "./WriteInfo";
 import ReadInfo from "./ReadInfo";
 
@@ -12,34 +11,34 @@ function splitSection(splitIndex, inputKeys, callback) {
   return callback(left, right);
 }
 
-function GenerateSectionElements({
-  toggleWrite,
-  inputKeys,
-  inputValues,
-  inputPlaceholders,
-  onChange,
-}) {
-  if (toggleWrite) {
-    return inputKeys.map((key, index) => (
-      <CustomizedInputElement
-        key={index}
-        inputKey={key}
-        inputValue={inputValues[key]}
-        placeholder={inputPlaceholders[key]}
-        onChange={onChange}
-      />
-    ));
-  } else {
-    return inputKeys.map((key, index) => (
-      <CustomizedDisplayElement
-        key={index}
-        inputKey={key}
-        value={inputValues[key]}
-        placeholder={inputPlaceholders[key]}
-      />
-    ));
-  }
-}
+// function GenerateSectionElements({
+//   toggleWrite,
+//   inputKeys,
+//   inputValues,
+//   inputPlaceholders,
+//   onChange,
+// }) {
+//   if (toggleWrite) {
+//     return inputKeys.map((key, index) => (
+//       <CustomizedInputElement
+//         key={index}
+//         inputKey={key}
+//         inputValue={inputValues[key]}
+//         placeholder={inputPlaceholders[key]}
+//         onChange={onChange}
+//       />
+//     ));
+//   } else {
+//     return inputKeys.map((key, index) => (
+//       <CustomizedDisplayElement
+//         key={index}
+//         inputKey={key}
+//         value={inputValues[key]}
+//         placeholder={inputPlaceholders[key]}
+//       />
+//     ));
+//   }
+// }
 
 export default function SectionInfo({
   header = null,
