@@ -1,5 +1,6 @@
 import SectionInfo from "./parent-components/SectionInfo";
 
+//TODO: Fix the placeholder attribute
 export default function Summary() {
   return (
     <SectionInfo

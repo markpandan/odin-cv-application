@@ -1,3 +1,7 @@
-.awards-section > * {
-  margin-bottom: 16px;
+.award-item {
+  position: relative;
+}
+
+.award-item > input {
+  width: 100%;
 }

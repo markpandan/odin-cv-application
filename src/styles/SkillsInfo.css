@@ -1,23 +1,24 @@
-.skills-section {
+.skill-info-recurring-container {
   position: relative;
-}
-
-.skills-section > * {
-  margin-bottom: 16px;
-}
-
-.skills-value-container {
   display: flex;
+  gap: 16px;
   flex-wrap: wrap;
+}
+
+.skill-info-recurring-container > .card-header {
+  flex: 0 0 100%;
 }
 
 .skill-item {
   position: relative;
-  padding: 0.5rem;
 }
 
-.delete-skill-item {
-  position: absolute;
-  right: 0%;
-  top: 0%;
+.skill-item > input {
+  width: 10rem;
+}
+
+.skill-item > h2 {
+  padding: 0.5rem;
+  border: 1px solid black;
+  border-radius: 16px;
 }

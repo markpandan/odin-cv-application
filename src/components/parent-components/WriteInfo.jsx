@@ -7,14 +7,9 @@ export default function WriteInfo({
   return (
     <>
       {children}
-      <div className="btn-write-info-container">
+      <div className="write-info-container-btns">
         {appendBtns}
-        <button
-          onClick={handleWriteToggle}
-          style={{ width: "10rem", margin: "auto" }}
-        >
-          Save
-        </button>
+        <button onClick={handleWriteToggle}>Save</button>
       </div>
     </>
   );

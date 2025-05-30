@@ -46,6 +46,8 @@ export default function SectionRecurringInfo({
   inputFormat = {},
   inputPlaceholders = {},
   excludeInputKeyToProcess = [],
+  infoContainerName = "",
+  infoItemName = "",
 }) {
   if (!("id" in inputFormat))
     throw new Error(
@@ -96,6 +98,8 @@ export default function SectionRecurringInfo({
     />
   ));
 
+  const classNameInfoItem = infoItemName ? infoItemName : "info-item";
+
   return (
     <div
       className="card"
@@ -106,10 +110,14 @@ export default function SectionRecurringInfo({
         !toggleWrite && setShowWriteBtnToggle(false);
       }}
     >
-      <div className="info-recurring-container">
+      <div
+        className={
+          !infoContainerName ? "info-recurring-container" : infoContainerName
+        }
+      >
         {header && (
           <div className="card-header">
-            <h2 className="card-title">{header}</h2>
+            <h1 className="card-title">{header}</h1>
             <hr />
           </div>
         )}
@@ -124,7 +132,7 @@ export default function SectionRecurringInfo({
                 className="add-work-exp"
                 onClick={handleAddInputListValue}
               >
-                +
+                Add
               </button>
             }
           >
@@ -132,8 +140,8 @@ export default function SectionRecurringInfo({
               <div
                 className={
                   activeIndex === index
-                    ? "info-item info-highlighted"
-                    : "info-item"
+                    ? `${classNameInfoItem} info-highlighted`
+                    : classNameInfoItem
                 }
                 key={inputListValues[index].id}
                 onMouseEnter={() => setActiveIndex(index)}
@@ -158,7 +166,10 @@ export default function SectionRecurringInfo({
             showEditBtnToggle={showWriteBtnToggle}
           >
             {sectionElements.map((sectionElement, index) => (
-              <div className="info-item" key={inputListValues[index].id}>
+              <div
+                className={classNameInfoItem}
+                key={inputListValues[index].id}
+              >
                 {sectionElement}
               </div>
             ))}

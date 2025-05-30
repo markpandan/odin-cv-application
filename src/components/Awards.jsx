@@ -1,11 +1,14 @@
+import SectionRecurringInfo from "./parent-components/SectionRecurringInfo";
 import "../styles/Awards.css";
 
-export default function SkillsInfo() {
+export default function Awards() {
   return (
-    <div className="card awards-section">
-      <h1>Awards</h1>
-      <hr />
-      <input type="text" placeholder="Awards" />
-    </div>
+    <SectionRecurringInfo
+      header={"Awards"}
+      inputFormat={{ id: 0, awards: "New Award" }}
+      inputPlaceholders={{ skill: "Insert New Award" }}
+      excludeInputKeyToProcess={["id"]}
+      infoItemName={"award-item"}
+    />
   );
 }

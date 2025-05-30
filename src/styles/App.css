@@ -29,6 +29,7 @@ input {
 
 .card-header {
   width: 100%;
+  margin-bottom: 8px;
 }
 
 .info-container,
@@ -52,8 +53,6 @@ input {
 
 .info-item {
   position: relative;
-
-  padding-top: 2rem;
 }
 
 .info-item > input {
@@ -65,9 +64,19 @@ input {
   border: 1px solid black;
 }
 
-.btn-write-info-container {
-  text-align: center;
+.write-info-container-btns {
   flex: 0 0 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.write-info-container-btns > button {
+  padding: 0.5rem;
+  width: 4rem;
+  border-radius: 16px;
 }
 
 .btn-delete-info-item {

@@ -111,7 +111,7 @@ export default function SectionInfo({
       <div className="info-container">
         {header && (
           <div className="card-header">
-            <h2 className="card-title">{header}</h2>
+            <h1 className="card-title">{header}</h1>
             <hr />
           </div>
         )}
