@@ -1,7 +1,5 @@
 import { useState } from "react";
 
-import CustomizedInputElement from "./CustomizedInputElement";
-import CustomizedDisplayElement from "./CustomizedDisplayElement";
 import GenerateSectionElements from "./GenerateSectionElements";
 import WriteInfo from "./WriteInfo";
 import ReadInfo from "./ReadInfo";
